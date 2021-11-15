@@ -5,7 +5,7 @@ public class Ejercicio4 {
         int[] numeros = new int[20];
         int[] cuadrados = new int[20];
         int[] cubos = new int[20];
-        
+
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = (int) (Math.random()*101);
             System.out.print(numeros + "\t");
