@@ -6,14 +6,17 @@ public class Ejercicio7 {
     public static void main(String[] args) {
         Scanner entradaTeclado = new Scanner(System.in);
 
+        int opcion;
+
         String[] palabra = new String[10];
 
         for (int i = 0; i < palabra.length; i++) {
             System.out.println("Escribe una palabra");
                 palabra[i] = entradaTeclado.next();
         }
-        for (int i = 0; i < palabra.length; i++) {
-            System.out.println(palabra[i]);
+
+        switch (opcion){
+
         }
 
 
