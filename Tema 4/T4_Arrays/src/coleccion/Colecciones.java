@@ -2,6 +2,7 @@ package coleccion;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 public class Colecciones {
     public static void main(String[] args) {
@@ -105,11 +106,20 @@ public class Colecciones {
         System.out.println(listaCosas);
 
         //Borrar todos los 6
-        for (int i = 0; i < listaCosas.size(); i++) {
+        /*for (int i = 0; i < listaCosas.size(); i++) {
             if (listaCosas.get(i).equals(6)){
                 listaCosas.remove(i);
             }
-        }
+        }*/
+
+        //Colecciones, se dará más adelante
+        listaCosas.removeIf(new Predicate() {
+            @Override
+            public boolean test(Object o) {
+                return o.equals(6);
+            }
+        });
+
         System.out.println(listaCosas);
 
         entradaTeclado.close();
