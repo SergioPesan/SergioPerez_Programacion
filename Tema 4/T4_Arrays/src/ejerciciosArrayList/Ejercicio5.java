@@ -17,11 +17,23 @@ public class Ejercicio5 {
         palabras.add("en");
         palabras.add("programación");
 
-        int letras = 0;
+        int min = 99999, max = -99999;
+
+        String palabraLarga = "", palabraCorta = "ngfoiernqgroqngioqnergoindqthqrehqehe";
 
         for (String item: palabras) {
-            
+            System.out.println(item + " tiene " + item.length() + " letras");
+
+            if (item.length() > max){
+                max = item.length();
+            }
+            if (item.length() < min){
+                min = item.length();
+            }
         }
+
+        System.out.println("La palabra con más letras es: " + max);
+        System.out.println("La palabra con menos letras es: " + min);
 
     }
 }
