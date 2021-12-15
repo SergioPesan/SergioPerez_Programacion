@@ -1,6 +1,5 @@
 package ejerciciosArrayList;
 
-import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.ArrayList;
 import java.util.Scanner;

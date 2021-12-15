@@ -26,6 +26,7 @@ public class Ejercicio16Garaje {
             opcion = entradaTeclado.nextInt();
 
             switch (opcion){
+                //Añadir coche
                 case 1:
                     System.out.println("Introduce la marca");
                     marca = entradaTeclado.next();
@@ -37,6 +38,7 @@ public class Ejercicio16Garaje {
                     matricula = entradaTeclado.next();
                     listaCoches.add(new Object[]{marca, modelo, coste, matricula});
                     break;
+                    //listar covhes
                 case 2:
                     for (Object[] coche: listaCoches) {
                         for (Object item: coche) {
@@ -45,6 +47,7 @@ public class Ejercicio16Garaje {
                         System.out.println();
                     }
                     break;
+                    //buscar coches por su matrícula
                 case 3:
                     System.out.println("Introduce la matricula que quieres buscar");
                     matricula = entradaTeclado.next();
@@ -60,36 +63,36 @@ public class Ejercicio16Garaje {
                         System.out.println();
                     }
                     break;
+                    //mostrar coste acumulado de todos los coches
                 case 4:
                     int suma = 0;
 
+
                     for (int i = 0; i < listaCoches.size(); i++) {
-                        suma += listaCoches.get(i);
+                        suma += (Integer) listaCoches.get(i)[2];
                     }
+
                     System.out.println("El coste acumulado es: " + suma);
 
                     break;
+                    //eliminar un coche pidiendo su matricula
                 case 5:
                     System.out.println("Introduce la matricula del coche que quieres eliminar");
                     matricula = entradaTeclado.next();
 
-                    for (Object[] coche: listaCoches) {
-                        if (coche[3].equals(matricula)) {
-                            for (Object item : coche) {
-                                item.
-                            }
+                    for (int i = 0; i < listaCoches.size(); i++) {
+                        if (matricula == listaCoches.get(i)[2]){
+                            listaCoches.remove(i);
                         }else{
-                            System.out.println("Esa matrícula no esta registrada");
+                            System.out.println("No se ha encontrado esa matricula");
                         }
-                        System.out.println();
+
                     }
 
                     break;
+                    //vaciar garaje
                 case 6:
-                    for (int i = 0; i < listaCoches.size(); i++) {
-                        listaCoches.remove(i);
-                        System.out.println("Se ha vaciado el garaje");
-                    }
+                    listaCoches.clear();
                     break;
             }
 
