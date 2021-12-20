@@ -44,7 +44,7 @@ public class Ejercicio16Garaje {
                         System.out.println("Garaje lleno, espere a que salga algún coche");
                     }
                     break;
-                    //listar covhes
+                    //listar coches
                 case 2:
                     if (listaCoches.size()>0) {
                         for (Object[] coche : listaCoches) {
