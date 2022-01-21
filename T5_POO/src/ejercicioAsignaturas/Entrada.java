@@ -2,6 +2,7 @@ package ejercicioAsignaturas;
 
 public class Entrada {
     public static void main(String[] args) {
+        /*
         Asignatura programacion = new Asignatura(1);
         //calificacion = 0      identificador = 1
         Asignatura entornos = new Asignatura(2);
@@ -21,21 +22,21 @@ public class Entrada {
        /* alumno1.getAsignatura1().setCalificación(9);
         //asigna a programación en el alumno 1, una nota.
         alumno1.getAsignatura3().getCalificación();*/
-
+/*
         Profesor profesor = new Profesor();
         profesor.ponerNotas(alumno1);
         System.out.println(alumno1.getAsignatura1().getCalificación());
         System.out.println(alumno1.getAsignatura2().getCalificación());
         System.out.println(alumno1.getAsignatura3().getCalificación());
 
-        System.out.println(profesor.ponerNotas(alumno2));
-
+        /*System.out.println(profesor.ponerNotas(alumno2));*/
+/*
         if(profesor.calcularMedia(alumno1)>=5){
             System.out.println("El alumno 1 pasa de curso");
         }else{
             System.out.println("El alumno 1 repite el curso");
         }
-
+*/
 
     }
 }

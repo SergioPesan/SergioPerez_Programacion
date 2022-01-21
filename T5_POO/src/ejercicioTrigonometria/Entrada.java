@@ -18,10 +18,19 @@ public class Entrada {
         switch (opcion){
             case 1:
                 System.out.println("Introduce la base del triángulo");
-                Triangulo
+                int baseTriangulo = entradaTeclado.nextInt();
+                System.out.println("Introduce la altura del triángulo");
+                int alturaTriangulo = entradaTeclado.nextInt();
+
+                Triangulo areaTriangulo = new Triangulo((baseTriangulo + alturaTriangulo)/2);
+
+                System.out.println("El área del triángulo es: " + areaTriangulo);
                 break;
             case 2:
+                System.out.println("");
+                int radio = entradaTeclado.nextInt();
 
+                Circulo areaCirculo = new Circulo();
                 break;
             case 3:
 
