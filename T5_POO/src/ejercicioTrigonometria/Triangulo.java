@@ -2,20 +2,18 @@ package ejercicioTrigonometria;
 
 public class Triangulo {
     //atributos
-    private int baseTriangulo, alturaTriangulo;
-
+    private int base, altura;
+    private double area;
 
     //constructores
-    public  Triangulo(){
-
-    }
+    public  Triangulo(){}
     public Triangulo(int base, int altura){
-        this.baseTriangulo = base;
-        this.alturaTriangulo = altura;
+        this.base= base;
+        this.altura = altura;
     }
 
     //método
-    public void areaTriangulo(double areaTriangulo){
-        areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+    public void areaTriangulo(){
+        this.area = (base * altura) / 2;
     }
 }

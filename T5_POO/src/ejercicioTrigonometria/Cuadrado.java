@@ -2,23 +2,23 @@ package ejercicioTrigonometria;
 
 public class Cuadrado {
     //atributos
-    private int baseCuadrado, alturaCuadrado;
-    private  double areaCuad, perimetroCuad;
+    private int base, altura;
+    private  double area, perimetro;
 
     //constructores
     public Cuadrado(){
 
     }
-    public Cuadrado(int baseCuad, int alturaCuad){
-        this.baseCuadrado = baseCuadrado;
-        this.alturaCuadrado = alturaCuadrado;
+    public Cuadrado(int base, int altura){
+        this.base = base;
+        this.altura = altura;
     }
 
     //metodos
     public void areaCuadrado(){
-        areaCuad = baseCuadrado * alturaCuadrado;
+        this.area = this.base * this.altura;
     }
     public void perimetroCuadrado(){
-        perimetroCuad = 2 * baseCuadrado + 2 * alturaCuadrado;
+        this.perimetro = 2 * this.base + 2 * this.altura;
     }
 }

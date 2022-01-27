@@ -2,7 +2,7 @@ package ejercicioTrigonometria;
 
 public class Circulo {
     //atributos
-    private double radio, diametro, areaCirculo;
+    private double radio, diametro, area;
 
     //contructores
     public Circulo(){
@@ -14,10 +14,10 @@ public class Circulo {
 
     //Métodos
     public void areaCirculo(){
-        areaCirculo = Math.pow(Math.PI * radio,2);
+        this.area = Math.PI * Math.pow(this.radio,2);
     }
 
     public void diametroCirculo(){
-        diametro = 2 * radio;
+        this.diametro = 2 * this.radio;
     }
 }
