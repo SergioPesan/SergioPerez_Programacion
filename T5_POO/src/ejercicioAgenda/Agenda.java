@@ -26,7 +26,11 @@ public class Agenda {
     }
 
     public void editar(String dni){
+        for (int i = 0; i < listado.size(); i++) {
+            if(listado.get(i).getDni().equalsIgnoreCase(dni)){
 
+            }
+        }
     }
     public void buscar(String dni){
         for (int i = 0; i < listado.size(); i++) {
@@ -37,8 +41,8 @@ public class Agenda {
     }
 
     public void listar(){
-        for (int i = 0; i < listado.size(); i++) {
-            listado.get(i);
+        for (Persona item:listado) {
+            item.mostrarDatos();
         }
     }
 }
