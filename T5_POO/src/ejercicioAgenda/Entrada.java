@@ -7,6 +7,12 @@ public class Entrada {
         Scanner entradaTeclado = new Scanner(System.in);
 
         Agenda agenda = new Agenda();
+        Persona persona = new Persona();
+        agenda.agregar(persona);
+        agenda.agregar(new Persona());
+        agenda.listar();
+
+        agenda.borrar("1234");
 
         int opcion;
 

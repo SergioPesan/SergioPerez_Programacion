@@ -42,6 +42,7 @@ public class Agenda {
 
     public void listar(){
         for (Persona item:listado) {
+            System.out.println("Imprimiendo persona");
             item.mostrarDatos();
         }
     }
