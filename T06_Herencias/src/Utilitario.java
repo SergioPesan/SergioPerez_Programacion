@@ -1,5 +1,5 @@
 public class Utilitario extends Coche{
-    int plazas;
+    private int plazas;
 
     public Utilitario(String matricula, String bastidor, int cv, int cc, int plazas){
         super(matricula,bastidor,cv,cc);
@@ -18,4 +18,12 @@ public class Utilitario extends Coche{
     public void setPlazas(int plazas) {
         this.plazas = plazas;
     }
+
+    public void mostrarDatosUtilitario(){
+        System.out.println("Matricula: " + matricula);
+        System.out.println("Bastidor: " + bastidor);
+        System.out.println("CV: " + cv);
+        System.out.println("CC" + cc);
+    }
+
 }

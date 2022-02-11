@@ -1,6 +1,6 @@
 public class Electrico extends Coche{
 
-    int bateria;
+    private int bateria;
 
     public Electrico(String matricula, String bastidor, int cv, int cc, int bateria){
         super(matricula,bastidor,cv,cc);
@@ -18,5 +18,12 @@ public class Electrico extends Coche{
 
     public void setBateria(int bateria) {
         this.bateria = bateria;
+    }
+
+    public void mostrarDatosElectrico(){
+        System.out.println("Matricula: " + matricula);
+        System.out.println("Bastidor: " + bastidor);
+        System.out.println("CV: " + cv);
+        System.out.println("CC" + cc);
     }
 }

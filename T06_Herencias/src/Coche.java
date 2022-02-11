@@ -16,6 +16,13 @@ public class Coche {
         this.velocidad += velocidad;
     }
 
+    public void mostrarDatos(){
+        System.out.println("Matrícula" + matricula);
+        System.out.println("Bastidor" + bastidor);
+        System.out.println("CV" + cv);
+        System.out.println("CC" + cc);
+    }
+
     public String getMatricula() {return matricula;}
 
     public void setMatricula(String matricula) {this.matricula = matricula;}

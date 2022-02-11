@@ -1,6 +1,6 @@
 public class SUV extends Coche{
 
-    String traccion;
+    private String traccion;
 
     public SUV(String matricula, String bastidor, int cv, int cc, String traccion){
         super(matricula,bastidor,cv,cc);
@@ -19,4 +19,5 @@ public class SUV extends Coche{
     public void setTraccion(String traccion) {
         this.traccion = traccion;
     }
+
 }

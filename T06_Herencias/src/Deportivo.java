@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Deportivo extends Coche{
 
     private int par;
@@ -25,4 +27,13 @@ public class Deportivo extends Coche{
     public int getPar() {return par;}
 
     public void setPar(int par) {this.par = par;}
+
+
+    public void mostrarDatosDeportivo(){
+        System.out.println("Matricula: " + matricula);
+        System.out.println("Bastidor: " + bastidor);
+        System.out.println("CV: " + cv);
+        System.out.println("CC" + cc);
+        System.out.println("Par" + par);
+    }
 }
