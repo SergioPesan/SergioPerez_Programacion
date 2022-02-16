@@ -1,13 +1,9 @@
 package trigonometría;
 
 public abstract class Figura {
-    double area, base, altura;
+    double area;
 
-    public Figura(double base, double altura) {
-        this.base = base;
-        this.altura = altura;
-    }
-    public Figura(double area){
+    public Figura(double area) {
         this.area = area;
     }
 
