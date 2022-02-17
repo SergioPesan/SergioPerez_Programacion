@@ -1,19 +1,21 @@
 package trigonometría;
 
 public class Rectangulo extends Figura{
-    private double base, altura;
+    private double base, altura, perimetro;
 
-    public Rectangulo(double base, double altura, double area){
-        super(area);
+    public Rectangulo(double base, double altura){
         this.base = base;
         this.altura = altura;
     }
 
-    public void calcularArea(){
-        double area = base * altura;
+    @Override
+    public double calcularArea() {
+        this.area = this.base * this.altura;
+        return this.area;
     }
 
-    public void calcularPerimetro(){
-        double perimetro = 2*(base + altura);
+    public double calcularPerimetro(){
+        this.perimetro = 2*(base + altura);
+        return this.perimetro;
     }
 }

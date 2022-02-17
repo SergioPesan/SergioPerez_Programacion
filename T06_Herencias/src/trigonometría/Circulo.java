@@ -1,21 +1,23 @@
 package trigonometría;
 
 public class Circulo extends Figura {
-    private double radio;
+    private double radio, diametro;
 
     public Circulo(double radio) {
         this.radio = radio;
     }
 
-    public Circulo(double radio, double area){
-        super(area);
-    }
-    //metodos
+    public Circulo(){}
 
-    public void calcularArea(){
-        area= (Math.PI) * (Math.pow(radio,2));
+
+    @Override
+    public double calcularArea() {
+        this.area = Math.PI * Math.pow(radio, 2);
+        return area;
     }
-    public void calcularDiametro(){
-        double diametro = 2 * radio;
+
+    public double calcularDiametro(){
+         this.diametro =this.radio * 2;
+         return this.diametro;
     }
 }

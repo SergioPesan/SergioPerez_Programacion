@@ -1,15 +1,16 @@
 package trigonometría;
 
 public class Triangulo extends Figura{
-    double base, altura;
+    private double base, altura;
 
-    public Triangulo(double base, double altura, double area){
-       super(area);
+    public Triangulo(double base, double altura){
        this.base = base;
        this.altura = altura;
     }
 
-    public void calcularArea(){
-        double area = (base * altura) / 2;
+    @Override
+    public double calcularArea(){
+        this.area = (this.base * this.altura) / 2;
+        return area;
     }
 }
