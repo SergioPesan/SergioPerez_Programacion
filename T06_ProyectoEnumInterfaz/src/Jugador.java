@@ -33,4 +33,9 @@ public final class Jugador extends Persona implements  Seleccionable{
     public void actitudCampo() {
 
     }
+
+    @Override
+    public void repartirPrima(){
+        this.sueldo += 200;
+    }
 }

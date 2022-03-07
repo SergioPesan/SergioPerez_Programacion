@@ -1,5 +1,6 @@
-public class Canterano extends Persona{
+public class Canterano extends Persona implements  Seleccionable{
     private int posibilidades;
+    private int ataque;
 
 
     public Canterano(String nombre, String apellido, int sueldo, int posibilidades) {
@@ -16,5 +17,25 @@ public class Canterano extends Persona{
     @Override
     public void calcularSueldo() {
         this.sueldo = 100;
+    }
+
+    @Override
+    public void atacar() {
+
+    }
+
+    @Override
+    public void defender() {
+
+    }
+
+    @Override
+    public void actitudCampo() {
+
+    }
+
+    @Override
+    public void repartirPrima() {
+
     }
 }
