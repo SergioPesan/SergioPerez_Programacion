@@ -1,39 +1,42 @@
 public class Jefe extends Trabajador implements Comision{
-    private String trabajadores;
-    private double voto = 0.33, beneficio = 0.15;
+    private int numTrabajadores;
 
-    public Jefe(String nombre, String apellido, String dni, double sueldo, String departamento, String trabajadores, double voto, double beneficio) {
+    public Jefe(String nombre, String apellido, String dni, double sueldo, Departamento departamento, int numTrabajadores, double voto, double beneficio) {
         super(nombre, apellido, dni, sueldo, departamento);
-        this.trabajadores = trabajadores;
-        this.voto = voto;
-        this.beneficio = beneficio;
+        this.numTrabajadores = numTrabajadores;
     }
+
 
     @Override
-    public void repartirBeneficios() {}
-
-    //Getter & Setter
-    public String getTrabajadores() {
-        return trabajadores;
-    }
-
-    public void setTrabajadores(String trabajadores) {
-        this.trabajadores = trabajadores;
-    }
-
-    public double getVoto() {
+    public double votar() {
+        double voto =(int)(Math.random()*11)/2;
         return voto;
     }
 
-    public void setVoto(double voto) {
-        this.voto = voto;
+    //Getter & Setter
+
+
+    public int getNumTrabajadores() {
+        return numTrabajadores;
     }
 
-    public double getBeneficio() {
-        return beneficio;
+    public void setNumTrabajadores(int numTrabajadores) {
+        this.numTrabajadores = numTrabajadores;
     }
 
-    public void setBeneficio(double beneficio) {
-        this.beneficio = beneficio;
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Trabajadores " + numTrabajadores);
+    }
+
+    @Override
+    public void calcularSueldo() {
+        this.sueldo = this.sueldo;
+    }
+    @Override
+    public void obtenerBeneficios(/*int beneficio*/) {
+        //this.sueldo += (beneficio*0.10);
     }
 }

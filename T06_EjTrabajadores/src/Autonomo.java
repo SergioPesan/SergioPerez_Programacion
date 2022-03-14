@@ -2,11 +2,14 @@ public class Autonomo extends Trabajador{
     private double cuota;
     private String factura;
 
-    public Autonomo(String nombre, String apellido, String dni, double sueldo, String departamento, double cuota, String factura) {
+
+    public Autonomo(String nombre, String apellido, String dni, double sueldo, Departamento departamento, double cuota, String factura) {
         super(nombre, apellido, dni, sueldo, departamento);
         this.cuota = cuota;
-        this.factura = factura;
+        realizarFactura();
     }
+    public Autonomo(){}
+
 
     //Getter & Setter
     public double getCuota() {
@@ -23,5 +26,22 @@ public class Autonomo extends Trabajador{
 
     public void setFactura(String factura) {
         this.factura = factura;
+    }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Cuota: " + cuota);
+        System.out.println("Factura: " + factura);
+    }
+
+    public void realizarFactura(){
+        this.factura = String.format("Factura realizada por un importe de %.2f a la empresa con CIF %s",
+                this.sueldo, Administracion.CIF);
+    }
+
+    @Override
+    public void calcularSueldo() {
+     this.sueldo = this.sueldo - (cuota +(cuota*Administracion.IVA) - (this.sueldo*Administracion.IRPF));
     }
 }

@@ -1,18 +1,18 @@
-public class Directivo implements Comision{
+public class Directivo extends Persona implements Comision{
 
-    private double capital, voto = 0.5, beneficio = 0.25;
+    private int capital;
 
     public Directivo(){}
-    public Directivo(double capital, double voto, double beneficio) {
+    public Directivo(int capital, double voto, double beneficio) {
         this.capital = capital;
-        this.voto = voto;
-        this.beneficio = beneficio;
     }
 
     @Override
-    public void repartirBeneficios() {
-
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Capital: " + capital);
     }
+
 
     //Getter & Setter
 
@@ -20,23 +20,18 @@ public class Directivo implements Comision{
         return capital;
     }
 
-    public void setCapital(double capital) {
+    public void setCapital(int capital) {
         this.capital = capital;
     }
 
-    public double getVoto() {
-        return voto;
+
+    @Override
+    public double votar() {
+        return 0;
     }
 
-    public void setVoto(double voto) {
-        this.voto = voto;
-    }
+    @Override
+    public void obtenerBeneficios() {
 
-    public double getBeneficio() {
-        return beneficio;
-    }
-
-    public void setBeneficio(double beneficio) {
-        this.beneficio = beneficio;
     }
 }

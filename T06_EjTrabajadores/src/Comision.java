@@ -1,5 +1,4 @@
 public interface Comision {
-    int votar;
-
-    void repartirBeneficios();
+    double votar();
+    void obtenerBeneficios();
 }

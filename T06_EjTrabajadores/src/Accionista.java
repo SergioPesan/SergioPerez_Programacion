@@ -1,17 +1,16 @@
-public class Accionista implements Comision{
-    private double acciones, voto = 1, beneficios = 0.6;
+public class Accionista extends Persona implements Comision{
+    private double acciones ;
 
     public Accionista(double acciones, double voto, double beneficios) {
         this.acciones = acciones;
-        this.voto = voto;
-        this.beneficios = beneficios;
+
     }
 
     @Override
-    public void repartirBeneficios() {
-
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Porcentaje de acciones: " + acciones);
     }
-
     //Getter & Setter
 
     public double getAcciones() {
@@ -22,19 +21,13 @@ public class Accionista implements Comision{
         this.acciones = acciones;
     }
 
-    public double getVoto() {
-        return voto;
+    @Override
+    public double votar(int voto) {
+        return 0;
     }
 
-    public void setVoto(double voto) {
-        this.voto = voto;
-    }
+    @Override
+    public void obtenerBeneficios() {
 
-    public double getBeneficios() {
-        return beneficios;
-    }
-
-    public void setBeneficios(double beneficios) {
-        this.beneficios = beneficios;
     }
 }
