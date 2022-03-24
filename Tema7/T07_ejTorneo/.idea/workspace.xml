@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9daf81c-7504-461a-af27-73c1682a3a38" name="Changes" comment="" />
+    <list default="true" id="e4d4fd04-263e-49d7-b1a8-9a6eafaec518" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../T07_Explicacion/src/anidacion/ClaseGenerica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entrada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Torneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T07_Explicacion/out/production/T07_Explicacion/anidacion/ClaseGeneral$ClaseAnidada.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T07_Explicacion/out/production/T07_Explicacion/anidacion/ClaseGeneral$ClaseAnidada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T07_Explicacion/out/production/T07_Explicacion/anidacion/ClaseGeneral.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T07_Explicacion/out/production/T07_Explicacion/anidacion/ClaseGeneral.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T07_Explicacion/out/production/T07_Explicacion/anidacion/Entrada.class" beforeDir="false" afterPath="$PROJECT_DIR$/../T07_Explicacion/out/production/T07_Explicacion/anidacion/Entrada.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T07_Explicacion/src/anidacion/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T07_Explicacion/src/anidacion/Entrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="26VbViTiHd2g0kT3nauDcUbDPw7" />
+  <component name="ProjectId" id="26jUziRW17lcia3KWS2BzatfgwS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -20,26 +36,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e9daf81c-7504-461a-af27-73c1682a3a38" name="Changes" comment="" />
-      <created>1647511728129</created>
+      <changelist id="e4d4fd04-263e-49d7-b1a8-9a6eafaec518" name="Changes" comment="" />
+      <created>1647936756417</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1647511728129</updated>
+      <updated>1647936756417</updated>
     </task>
     <servers />
   </component>
