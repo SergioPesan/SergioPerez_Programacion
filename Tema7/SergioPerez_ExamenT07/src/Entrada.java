@@ -19,6 +19,5 @@ public class Entrada {
         restaurante3.registrarPedido(restaurante3.new ConsumicionBarra(1,4,TipoBebida.Refresco));
 
 
-
     }
 }
