@@ -10,12 +10,14 @@ public class Entrada {
         File directory2 = null;
 
         file = new File("C:\\Users\\Usuario DAM1\\Desktop\\ficherosExp\\fichero.txt");
-        directory = new File("C:\\Users\\Usuario DAM1\\Desktop\\ficherosExp");
-        directory2 = new File("C:\\Users\\Usuario DAM1\\Desktop\\ficherosExp\\ficherosNuevo");
+        File file2 = new File("C:\\Users\\Usuario DAM1\\Desktop\\ficherosExp\\ficheronuevo.txt");
+        //File ejemplo = new File("C:\\Users\\Usuario DAM1\\Desktop\\Ficheros\\ejemplo.txt");
+        //directory = new File("C:\\Users\\Usuario DAM1\\Desktop\\ficherosExp");
+       // directory2 = new File("C:\\Users\\Usuario DAM1\\Desktop\\ficherosExp\\ficherosNuevo");
 
         FicherosController ficherosController = new FicherosController();
         // ficherosController.getFileInfo(directory);
-        ficherosController.getDirectoryInfo(directory);
+        //ficherosController.getDirectoryInfo(directory);
 
         /*if(!file.exists()){ // Para crear un fichero nuevo
             try{
@@ -28,7 +30,9 @@ public class Entrada {
         }*/
 
 
-
+        //ficherosController.lecturaFichero(file);
+        //ficherosController.lecturaBuffer(file);
+        ficherosController.escrituraFichero(file2);
 
 
     }

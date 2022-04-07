@@ -43,19 +43,29 @@ public class FicherosController {
             System.out.println(contador + " - " + childItem.getName());
             contador++;
         }
+        System.out.println(contador + " - Volver al padre");
         System.out.println("Que opcion quieres");
         opcion = scanner.nextInt();
 
         if (opcion >= 0 && opcion < ficherosChild.length){
-            if (ficherosChild[opcion].isDirectory()){
-                listarChild(ficherosChild[opcion]);
+
+            //parent
+            if (opcion == contador){
+                listarChild(child.getParentFile());
             }else{
-                System.out.println("Error - Es un fichero");
+                //child
+                if (ficherosChild[opcion].isDirectory()){
+                    listarChild(ficherosChild[opcion]);
+                }else{
+                    System.out.println("Error - Es un fichero");
+                }
             }
         }else{
             System.out.println("Opción incorrecta");
         }
     }
+
+
 
 
 }
