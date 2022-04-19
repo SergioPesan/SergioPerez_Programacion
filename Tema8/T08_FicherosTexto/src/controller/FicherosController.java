@@ -29,14 +29,12 @@ public class FicherosController {
             String[] nombreFicheros = file.list();
             File[] ficheros = file.listFiles();
 
-            for ( File fichero : ficheros ) {
-                System.out.println(fichero); // daca la posicion
-                System.out.println(fichero.getName()); // saca el nombre del archivo
+            if (ficheros != null) {
+                for ( File fichero : ficheros ) {
+                    System.out.println(fichero); // daca la posicion
+                    System.out.println(fichero.getName()); // saca el nombre del archivo
+                }
             }
-
-
-
-
 
 
         }
@@ -58,7 +56,9 @@ public class FicherosController {
             e.printStackTrace();
         } finally {
             try {
-                fileReader.close();
+                if (fileReader != null) {
+                    fileReader.close();
+                }
             } catch (IOException | NullPointerException e) { // "Exception e" son todas las excepciones juntas
                 e.printStackTrace();
             }
@@ -92,19 +92,23 @@ public class FicherosController {
 
     public void escrituraFichero(File file){
         FileWriter fileWriter = null;
-        FileReader fileReader = null;
+        BufferedWriter bufferedWriter = null;
 
         try {
             fileWriter = new FileWriter(file);
-            fileWriter.write("Ejemplo \n");
-            fileWriter.write("Esto es una nueva línea en el fichero");
-            fileReader = new FileReader(file);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write("Esto es un ejemplo");
+            bufferedWriter.newLine();
+            bufferedWriter.write("Esto es un ejemplo en una línea nueva");
+            bufferedWriter.newLine();
 
         }catch (IOException e){
             e.printStackTrace();
         }finally {
             try {
-                fileWriter.close();
+                if (fileWriter != null) {
+                    fileWriter.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
