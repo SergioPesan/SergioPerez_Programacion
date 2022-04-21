@@ -19,7 +19,7 @@ public class FicherosController {
             fileWriter = new FileWriter(file);
             bufferedWriter = new BufferedWriter(fileWriter);
 
-            do {
+            do { 
                 System.out.println("Elige una opción");
                 System.out.println("0. Terminar programa");
                 System.out.println("1. Escribir una línea");
