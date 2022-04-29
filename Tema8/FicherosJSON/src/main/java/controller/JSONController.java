@@ -8,6 +8,10 @@ import org.json.JSONObject;
 import org.json.JSONString;
 
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 
 public class JSONController {
     String jsonString = "{\n" +
@@ -20,6 +24,8 @@ public class JSONController {
             "    \"cine\",\n" +
             "    \"informática\"\n" +
             "  ]}";
+
+    ArrayList<Asignatura> listaAsignaturas;
 
     public void pasarStringJson(){
         //System.out.println(jsonString);
@@ -89,11 +95,12 @@ public class JSONController {
         }
     }
 
-    public void leerJSONAsignaturas(){
+    public void leerJSONAsignaturas(int curso, String ciclo){
         //JSONArray asignaturas;
 
         File file = new File("src/main/resources/asignaturas.json");
         BufferedReader br = null;
+        listaAsignaturas = new ArrayList();
 
         try {
             br = new BufferedReader(new FileReader(file));
@@ -112,8 +119,10 @@ public class JSONController {
                 JSONObject asignaturaJSON = asignaturas.getJSONObject(0);
                 Gson gson = new Gson();
                 Asignatura asignatura = gson.fromJson(asignaturaJSON.toString(),Asignatura.class);
-                caracteristicasAsignatura(asignatura);
+                listaAsignaturas.add(asignatura);
+                //caracteristicasAsignatura(asignatura,ciclo,curso);
 
+                caracteristicasAsignaturas(ciclo, curso);
 
             }
 
@@ -130,12 +139,40 @@ public class JSONController {
                 e.printStackTrace();
             }
         }
-
-
     }
 
-    public void caracteristicasAsignatura (Asignatura asignatura){
-        System.out.println(asignatura.getCiclo());
-        System.out.println(asignatura.getCurso());
+    public void caracteristicasAsignaturas(String ciclo, int curso){
+        for ( Asignatura item : listaAsignaturas ) {
+            if (item.getCurso() == curso && item.getCiclo().contains(ciclo));
+            System.out.println(item.getSiglas());
+            System.out.println(item.getCiclo());
+            System.out.println(item.getCurso());
+            System.out.println("Conocimientos");
+        }
+    }
+
+    public void caracteristicasAsignatura (Asignatura asignatura, String ciclo, int curso){
+
+        if (asignatura.getCiclo().contains(ciclo) && asignatura.getCurso() == curso) {
+            System.out.println(asignatura.getCiclo());
+            System.out.println(asignatura.getCurso());
+        }
+    }
+
+    public void lecturaJSONAPI(int numero){
+        String urlString = "https://randomuser.me/api/?results="+numero;
+        try {
+            URL url = new URL(urlString);
+            HttpURLConnection connection =(HttpURLConnection) url.openConnection();
+            // contestacion
+            BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+            String lectura = br.readLine();
+            JSONObject jsonObject = new JSONObject(lectura);
+            System.out.println(lectura);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
