@@ -1,6 +1,7 @@
 package controller;
 
 import com.google.gson.Gson;
+import model.Asignatura;
 import model.Conocimiento;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -86,5 +87,55 @@ public class JSONController {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void leerJSONAsignaturas(){
+        //JSONArray asignaturas;
+
+        File file = new File("src/main/resources/asignaturas.json");
+        BufferedReader br = null;
+
+        try {
+            br = new BufferedReader(new FileReader(file));
+            String linea = null;
+            StringBuffer lecturaCompleta = new StringBuffer();
+
+            while ((linea = br.readLine())!= null){
+                lecturaCompleta.append(linea);
+            }
+
+
+            JSONObject jsonAsignaturas = new JSONObject(lecturaCompleta.toString());
+            JSONArray asignaturas = jsonAsignaturas.getJSONArray("asignaturas");
+
+            for (int i = 0; i < asignaturas.length(); i++) {
+                JSONObject asignaturaJSON = asignaturas.getJSONObject(0);
+                Gson gson = new Gson();
+                Asignatura asignatura = gson.fromJson(asignaturaJSON.toString(),Asignatura.class);
+                caracteristicasAsignatura(asignatura);
+
+
+            }
+
+            System.out.println(asignaturas);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
+
+    public void caracteristicasAsignatura (Asignatura asignatura){
+        System.out.println(asignatura.getCiclo());
+        System.out.println(asignatura.getCurso());
     }
 }
