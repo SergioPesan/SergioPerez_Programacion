@@ -11,6 +11,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class JSONController {
@@ -174,5 +175,33 @@ public class JSONController {
             e.printStackTrace();
         }
 
+    }
+
+    public void lecturaUsers(){
+
+        String urlString = "https://randomuser.me/api/?results=2";
+        try {
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            //File file;
+            //FileReader fileReader
+            BufferedReader br;
+
+            br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+           String response = br.readLine();
+           JSONObject responeJSON = new JSONObject(response);
+            JSONArray arrayResultados = responeJSON.getJSONArray("results");
+            JSONObject objetoResultado = arrayResultados.getJSONObject(0);
+
+            for (int i = 0; i < arrayResultados.length(); i++) {
+
+            }
+
+            System.out.println(objetoResultado);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

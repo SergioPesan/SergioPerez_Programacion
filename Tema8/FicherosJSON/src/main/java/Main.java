@@ -37,6 +37,9 @@ public class Main {
                 int numero = scanner.nextInt();
                 controller.lecturaJSONAPI(numero);
                 break;
+            case 5:
+                controller.lecturaUsers();
+                break;
         }
 
         scanner.close();
