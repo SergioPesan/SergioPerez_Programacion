@@ -14,7 +14,6 @@ public class ControllerBD {
     private PreparedStatement preparedStatement;
 
 
-
     private void getConnection(){
         String host = "127.0.0.1:3306";
         String dtbs = SchemeDB.DB_NAME;
@@ -158,26 +157,17 @@ public class ControllerBD {
     //aquellos usuarios que tengan una edad inferior a la pedida por el sistema
     //el sistema avisara del numero de usuarios borrados
 
-    public void modificarEdadAlumno(Alumno alumno){
-        String nombre = alumno.getNombre();
-        int edad = alumno.getEdad();
+    public void actualizarEdadAlumno(String nombre,int edad){
+        String query = "UPDATE %s SET %s = ? WHERE %s = ?";
         // INSERT INTO alumnos (nombre,apellido,edad) VALUES ('BORJA','MARTIN',38)
         try {
             getConnection();
-            statement = conn.createStatement();
-            String queryFormat = String.format("UPDATE %s SET %s = %d WHERE %s = %s",
-                    SchemeDB.TAB_ALU, SchemeDB.COL_EDAD,edad,SchemeDB.COL_NOMBRE,nombre);
-
-            int numeroRow = statement.executeUpdate(queryFormat);
-            if (numeroRow>0){
-                System.out.println("Alumno insertado correctamente");
-            }else {
-                System.out.printf("%d alumnos no se han podido insertar",numeroRow);
-            }
-
-            // System.out.println(numeroRow);
-
-
+            preparedStatement = conn.prepareStatement(String.format(query, SchemeDB.TAB_ALU,
+                    SchemeDB.COL_EDAD, SchemeDB.COL_NOMBRE));
+            preparedStatement.setInt(1,edad);
+            preparedStatement.setString(2,nombre);
+            int rows = preparedStatement.executeUpdate();
+            System.out.println("Los cambios afectados son: "+rows);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -191,22 +181,17 @@ public class ControllerBD {
         }
     }
 
-    public void eliminarAlumno(Alumno alumno){
-        String nombre = alumno.getNombre();
-        int edad = alumno.getEdad();
+    public void eliminarAlumno(int edad){
+        String queryFormat = String.format("DELETE FROM %s WHERE ? < %s");
         // INSERT INTO alumnos (nombre,apellido,edad) VALUES ('BORJA','MARTIN',38)
         try {
             getConnection();
-            statement = conn.createStatement();
-            String queryFormat = String.format("DELETE FROM %s WHERE %d < %s",
-                    SchemeDB.TAB_ALU, edad, SchemeDB.COL_EDAD);
+            preparedStatement = conn.prepareStatement(String.format(queryFormat,SchemeDB.TAB_ALU,
+                    SchemeDB.COL_EDAD));
+            preparedStatement.setInt(1,edad);
+            int rows = preparedStatement.executeUpdate();
 
-            int numeroRow = statement.executeUpdate(queryFormat);
-            if (numeroRow>0){
-                System.out.println("Alumno insertado correctamente");
-            }else {
-                System.out.printf("%d alumnos no se han podido insertar",numeroRow);
-            }
+
 
             // System.out.println(numeroRow);
 

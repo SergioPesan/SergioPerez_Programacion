@@ -32,6 +32,17 @@ public class Main {
 
         }while (continuar.equalsIgnoreCase("s"));*/
 
+        System.out.println("Introdice nombre modificar: ");
+        nombre = scanner.next();
+        System.out.println("Introduce la nueva edad: ");
+        edad = scanner.nextInt();
+
+        controllerBD.actualizarEdadAlumno(nombre,edad);
+
+        System.out.println("Introduce una edad \f" +
+                "todas los alumnos con la edad inferior a la seleccionada seran eliminados");
+        edad = scanner.nextInt();
+        controllerBD.eliminarAlumno(edad);
 
         scanner.close();
     }
