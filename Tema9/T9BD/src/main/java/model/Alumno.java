@@ -2,6 +2,8 @@ package model;
 
 import database.SchemeDB;
 
+import java.util.ArrayList;
+
 public class Alumno {
 
     // atributos

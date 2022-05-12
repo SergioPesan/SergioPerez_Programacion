@@ -4,6 +4,7 @@ import database.SchemeDB;
 import model.Alumno;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ControllerBD {
 
@@ -12,6 +13,8 @@ public class ControllerBD {
     private Statement statement;
     // comprueba tipos de datos
     private PreparedStatement preparedStatement;
+    private ResultSet resultSet;
+    private ArrayList<Alumno> listaAlumnos;
 
 
     private void getConnection(){
@@ -34,15 +37,15 @@ public class ControllerBD {
             e.printStackTrace();
         }
     }
-
-    public void closeConnection() {
-        try {
-            if (conn!= null){
-                conn.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+try {
+        if (conn!= null){
+            conn.close();
         }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    public void closeConnection() {
+
 
     }
 
@@ -208,5 +211,46 @@ public class ControllerBD {
             closeConnection();
         }
     }
+
+    public void getResultados(Alumno alumno){
+        getConnection();
+        try {
+            listaAlumnos = new ArrayList();
+            //Alumno alumno = null;
+
+
+            statement = conn.createStatement();
+            String query = "SELECT * FROM " + SchemeDB.TAB_ALU;
+            resultSet = statement.executeQuery(query);
+            /*resultSet.last();
+            resultSet.previous();*/
+
+            while (resultSet.next()){
+                String nombre = resultSet.getString(SchemeDB.COL_NOMBRE);
+                String apellido = resultSet.getString(SchemeDB.COL_APELLIDO);
+                int edad = resultSet.getInt(SchemeDB.COL_EDAD);
+                int id = resultSet.getInt(SchemeDB.COL_ID);
+                listaAlumnos.add(new Alumno(nombre,apellido,edad));
+                listaAlumnos.add(alumno);
+                System.out.println(alumno.getNombre());
+                System.out.println(alumno.getApellido());
+                System.out.println(alumno.getEdad());
+                //System.out.println(id);
+
+
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
 }
