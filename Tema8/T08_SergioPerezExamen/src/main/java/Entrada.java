@@ -19,7 +19,7 @@ public class Entrada {
 
         //Ejercicio 3
 
-        Ejercicio3Controller ejercicio3Controller = new Ejercicio3Controller();
+       Ejercicio3Controller ejercicio3Controller = new Ejercicio3Controller();
 
         int opcion;
 

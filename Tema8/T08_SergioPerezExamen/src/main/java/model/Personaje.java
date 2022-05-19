@@ -1,6 +1,8 @@
 package model;
 
-public class Personaje {
+import java.io.Serializable;
+
+public class Personaje implements Serializable {
     // atributos
     String name, photo;
 
@@ -35,12 +37,4 @@ public class Personaje {
 
     // método toString()
 
-
-    @Override
-    public String toString() {
-        return "Personaje{" +
-                "name='" + name + '\'' +
-                ", photo='" + photo + '\'' +
-                '}';
-    }
 }
