@@ -1,6 +1,8 @@
 package model;
 
-public class Pelicula {
+import java.io.Serializable;
+
+public class Pelicula implements Serializable {
 
     //Atributos
 

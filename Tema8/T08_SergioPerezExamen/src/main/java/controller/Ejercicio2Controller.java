@@ -16,7 +16,8 @@ public class Ejercicio2Controller {
 
             try {
                 while ((personajeLectura = (Personaje) ois.readObject())!= null){
-                    System.out.println(personajeLectura);
+                    System.out.println(personajeLectura.getName());
+                    System.out.println(personajeLectura.getPhoto());
                 }
             }catch (EOFException e){
                 System.out.println("Fichero terminado");
